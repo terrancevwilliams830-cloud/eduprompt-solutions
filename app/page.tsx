@@ -1,5 +1,4 @@
-import Link from "next/link";
-import React from "react";
+import type { CSSProperties } from "react";
 
 const products = [
   {
@@ -68,53 +67,30 @@ const pricing = [
 
 export default function HomePage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background: "#f8fafc",
-        color: "#0f172a",
-        fontFamily: "system-ui",
-      }}
-    >
-      <header
-        style={{
-          borderBottom: "1px solid #e2e8f0",
-          background: "#ffffff",
-          position: "sticky",
-          top: 0,
-          zIndex: 20,
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "18px 24px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "16px",
-            flexWrap: "wrap",
-          }}
-        >
-          <div style={{ fontWeight: 800, fontSize: "20px" }}>
-            EduPrompt Solutions
-          </div>
+    <main style={page}>
+      <header style={header}>
+        <div style={headerInner}>
+          <div style={logo}>EduPrompt Solutions</div>
 
-          <nav
-            style={{
-              display: "flex",
-              gap: "18px",
-              flexWrap: "wrap",
-              alignItems: "center",
-            }}
-          >
-            <a href="#solutions" style={navLink}>Solutions</a>
-            <a href="#pricing" style={navLink}>Pricing</a>
-            <a href="#schools" style={navLink}>Schools</a>
-            <a href="#districts" style={navLink}>Districts</a>
-            <a href="#demo" style={navLink}>Demo</a>
-            <a href="https://app.edupromptsolutions.com" style={navLink}>Login</a>
+          <nav style={nav}>
+            <a href="#solutions" style={navLink}>
+              Solutions
+            </a>
+            <a href="#pricing" style={navLink}>
+              Pricing
+            </a>
+            <a href="#schools" style={navLink}>
+              Schools
+            </a>
+            <a href="#districts" style={navLink}>
+              Districts
+            </a>
+            <a href="#demo" style={navLink}>
+              Demo
+            </a>
+            <a href="https://app.edupromptsolutions.com" style={navLink}>
+              Login
+            </a>
             <a href="https://app.edupromptsolutions.com" style={primaryButton}>
               Start Free Beta
             </a>
@@ -122,45 +98,26 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          padding: "72px 24px 48px",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "32px",
-          alignItems: "center",
-        }}
-      >
+      <section style={heroSection}>
         <div>
           <div style={badge}>AI Teacher Platform</div>
 
-          <h1
-            style={{
-              fontSize: "56px",
-              lineHeight: 1.05,
-              margin: "18px 0 18px 0",
-            }}
-          >
-            AI-powered planning and progress tools built for teachers, schools, and districts.
+          <h1 style={heroTitle}>
+            AI-powered planning and progress tools built for teachers, schools,
+            and districts.
           </h1>
 
-          <p
-            style={{
-              fontSize: "20px",
-              lineHeight: 1.7,
-              color: "#475569",
-              maxWidth: "680px",
-              marginBottom: "28px",
-            }}
-          >
+          <p style={heroText}>
             Create lessons, generate worksheets, support multilingual learners,
-            write measurable goals, and monitor student progress in one connected platform.
+            write measurable goals, and monitor student progress in one
+            connected platform.
           </p>
 
-          <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
-            <a href="https://app.edupromptsolutions.com" style={primaryButton}>
+          <div style={buttonRow}>
+            <a
+              href="https://app.edupromptsolutions.com"
+              style={primaryButton}
+            >
               Start Free Beta
             </a>
             <a href="#demo" style={secondaryButton}>
@@ -168,41 +125,16 @@ export default function HomePage() {
             </a>
           </div>
 
-          <p
-            style={{
-              marginTop: "18px",
-              color: "#64748b",
-              fontSize: "15px",
-            }}
-          >
+          <p style={heroNote}>
             Built for teachers. Designed for schools. Ready for districts.
           </p>
         </div>
 
-        <div
-          style={{
-            background: "linear-gradient(135deg, #0f172a, #1d4ed8)",
-            borderRadius: "28px",
-            padding: "28px",
-            color: "#ffffff",
-            minHeight: "420px",
-            boxShadow: "0 20px 60px rgba(15,23,42,0.15)",
-          }}
-        >
-          <div style={{ fontSize: "14px", opacity: 0.9, marginBottom: "12px" }}>
-            Platform Preview
-          </div>
-          <div
-            style={{
-              background: "#ffffff",
-              color: "#0f172a",
-              borderRadius: "20px",
-              padding: "20px",
-            }}
-          >
-            <div style={{ fontWeight: 800, fontSize: "22px", marginBottom: "16px" }}>
-              Teacher Workspace
-            </div>
+        <div style={previewWrap}>
+          <div style={previewLabel}>Platform Preview</div>
+
+          <div style={previewPanel}>
+            <div style={previewTitle}>Teacher Workspace</div>
 
             <div style={previewGrid}>
               <div style={previewCardDark}>Lesson Generator</div>
@@ -212,18 +144,9 @@ export default function HomePage() {
               <div style={previewCardBlue}>Progress Monitor</div>
             </div>
 
-            <div
-              style={{
-                marginTop: "18px",
-                padding: "16px",
-                borderRadius: "16px",
-                background: "#f8fafc",
-                border: "1px solid #e2e8f0",
-                color: "#475569",
-                lineHeight: 1.6,
-              }}
-            >
-              One workspace for planning, intervention, language support, and progress reporting.
+            <div style={previewNote}>
+              One workspace for planning, intervention, language support, and
+              progress reporting.
             </div>
           </div>
         </div>
@@ -232,15 +155,24 @@ export default function HomePage() {
       <section style={valueStrip}>
         <div style={valueCard}>
           <h3 style={valueTitle}>Faster Planning</h3>
-          <p style={valueText}>Generate lessons and materials in minutes, not hours.</p>
+          <p style={valueText}>
+            Generate lessons and materials in minutes, not hours.
+          </p>
         </div>
+
         <div style={valueCard}>
           <h3 style={valueTitle}>Diverse Learner Support</h3>
-          <p style={valueText}>Support multilingual learners and special education students with confidence.</p>
+          <p style={valueText}>
+            Support multilingual learners and special education students with
+            confidence.
+          </p>
         </div>
+
         <div style={valueCard}>
           <h3 style={valueTitle}>Privacy-Safe Progress Monitoring</h3>
-          <p style={valueText}>Track student performance using secure student codes only.</p>
+          <p style={valueText}>
+            Track student performance using secure student codes only.
+          </p>
         </div>
       </section>
 
@@ -276,7 +208,7 @@ export default function HomePage() {
           ].map((step, index) => (
             <div key={step} style={workflowCard}>
               <div style={stepNumber}>{index + 1}</div>
-              <div style={{ fontWeight: 700 }}>{step}</div>
+              <div style={workflowText}>{step}</div>
             </div>
           ))}
         </div>
@@ -320,17 +252,18 @@ export default function HomePage() {
       <section id="districts" style={sectionWrap}>
         <div style={ctaPanel}>
           <div>
-            <h2 style={{ margin: "0 0 12px 0", fontSize: "34px" }}>
-              Join the founding educator beta
-            </h2>
-            <p style={{ margin: 0, color: "#475569", lineHeight: 1.7, maxWidth: "760px" }}>
-              We are inviting a small group of educators, specialists, and school leaders
-              to help shape the future of EduPrompt.
+            <h2 style={ctaTitle}>Join the founding educator beta</h2>
+            <p style={ctaText}>
+              We are inviting a small group of educators, specialists, and
+              school leaders to help shape the future of EduPrompt.
             </p>
           </div>
 
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "20px" }}>
-            <a href="https://app.edupromptsolutions.com" style={primaryButton}>
+          <div style={buttonRow}>
+            <a
+              href="https://app.edupromptsolutions.com"
+              style={primaryButton}
+            >
               Start Free Beta
             </a>
             <a href="#demo" style={secondaryButton}>
@@ -342,15 +275,14 @@ export default function HomePage() {
 
       <section id="demo" style={sectionWrapAlt}>
         <div style={ctaPanel}>
-          <h2 style={{ margin: "0 0 12px 0", fontSize: "34px" }}>
-            Ready to see EduPrompt in action?
-          </h2>
-          <p style={{ margin: 0, color: "#475569", lineHeight: 1.7 }}>
-            Schedule a walkthrough to see how EduPrompt supports planning, differentiation,
-            special education, multilingual support, and progress monitoring.
+          <h2 style={ctaTitle}>Ready to see EduPrompt in action?</h2>
+          <p style={ctaText}>
+            Schedule a walkthrough to see how EduPrompt supports planning,
+            differentiation, special education, multilingual support, and
+            progress monitoring.
           </p>
 
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "20px" }}>
+          <div style={buttonRow}>
             <a href="mailto:info@edupromptsolutions.com" style={primaryButton}>
               Request Demo
             </a>
@@ -361,31 +293,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer
-        style={{
-          borderTop: "1px solid #e2e8f0",
-          background: "#ffffff",
-          marginTop: "32px",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "24px",
-            display: "flex",
-            justifyContent: "space-between",
-            gap: "16px",
-            flexWrap: "wrap",
-            color: "#64748b",
-          }}
-        >
+      <footer style={footer}>
+        <div style={footerInner}>
           <div>EduPrompt Solutions © 2026</div>
-          <div style={{ display: "flex", gap: "18px", flexWrap: "wrap" }}>
-            <a href="#solutions" style={footerLink}>Solutions</a>
-            <a href="#pricing" style={footerLink}>Pricing</a>
-            <a href="#demo" style={footerLink}>Demo</a>
-            <a href="https://app.edupromptsolutions.com" style={footerLink}>Login</a>
+
+          <div style={footerLinks}>
+            <a href="#solutions" style={footerLink}>
+              Solutions
+            </a>
+            <a href="#pricing" style={footerLink}>
+              Pricing
+            </a>
+            <a href="#demo" style={footerLink}>
+              Demo
+            </a>
+            <a href="https://app.edupromptsolutions.com" style={footerLink}>
+              Login
+            </a>
           </div>
         </div>
       </footer>
@@ -401,29 +325,68 @@ function SectionHeader({
   text: string;
 }) {
   return (
-    <div style={{ marginBottom: "28px" }}>
-      <h2 style={{ margin: "0 0 10px 0", fontSize: "38px", color: "#0f172a" }}>
-        {title}
-      </h2>
-      <p style={{ margin: 0, color: "#475569", fontSize: "18px", lineHeight: 1.7 }}>
-        {text}
-      </p>
+    <div style={sectionHeaderWrap}>
+      <h2 style={sectionTitle}>{title}</h2>
+      <p style={sectionText}>{text}</p>
     </div>
   );
 }
 
-const navLink: React.CSSProperties = {
+const page: CSSProperties = {
+  minHeight: "100vh",
+  background: "#f8fafc",
+  color: "#0f172a",
+  fontFamily: "system-ui, sans-serif",
+};
+
+const header: CSSProperties = {
+  borderBottom: "1px solid #e2e8f0",
+  background: "#ffffff",
+  position: "sticky",
+  top: 0,
+  zIndex: 20,
+};
+
+const headerInner: CSSProperties = {
+  maxWidth: "1200px",
+  margin: "0 auto",
+  padding: "18px 24px",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  gap: "16px",
+  flexWrap: "wrap",
+};
+
+const logo: CSSProperties = {
+  fontWeight: 800,
+  fontSize: "20px",
+};
+
+const nav: CSSProperties = {
+  display: "flex",
+  gap: "18px",
+  flexWrap: "wrap",
+  alignItems: "center",
+};
+
+const navLink: CSSProperties = {
   textDecoration: "none",
   color: "#334155",
   fontWeight: 600,
 };
 
-const footerLink: React.CSSProperties = {
-  textDecoration: "none",
-  color: "#64748b",
+const heroSection: CSSProperties = {
+  maxWidth: "1200px",
+  margin: "0 auto",
+  padding: "72px 24px 48px",
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+  gap: "32px",
+  alignItems: "center",
 };
 
-const badge: React.CSSProperties = {
+const badge: CSSProperties = {
   display: "inline-block",
   padding: "8px 14px",
   borderRadius: "999px",
@@ -433,7 +396,33 @@ const badge: React.CSSProperties = {
   fontWeight: 700,
 };
 
-const primaryButton: React.CSSProperties = {
+const heroTitle: CSSProperties = {
+  fontSize: "56px",
+  lineHeight: 1.05,
+  margin: "18px 0 18px 0",
+};
+
+const heroText: CSSProperties = {
+  fontSize: "20px",
+  lineHeight: 1.7,
+  color: "#475569",
+  maxWidth: "680px",
+  marginBottom: "28px",
+};
+
+const heroNote: CSSProperties = {
+  marginTop: "18px",
+  color: "#64748b",
+  fontSize: "15px",
+};
+
+const buttonRow: CSSProperties = {
+  display: "flex",
+  gap: "14px",
+  flexWrap: "wrap",
+};
+
+const primaryButton: CSSProperties = {
   background: "#0f172a",
   color: "#ffffff",
   textDecoration: "none",
@@ -443,7 +432,7 @@ const primaryButton: React.CSSProperties = {
   display: "inline-block",
 };
 
-const secondaryButton: React.CSSProperties = {
+const secondaryButton: CSSProperties = {
   background: "#ffffff",
   color: "#111827",
   textDecoration: "none",
@@ -454,7 +443,7 @@ const secondaryButton: React.CSSProperties = {
   display: "inline-block",
 };
 
-const secondaryButtonSmall: React.CSSProperties = {
+const secondaryButtonSmall: CSSProperties = {
   background: "#ffffff",
   color: "#111827",
   textDecoration: "none",
@@ -466,7 +455,88 @@ const secondaryButtonSmall: React.CSSProperties = {
   marginTop: "14px",
 };
 
-const valueStrip: React.CSSProperties = {
+const previewWrap: CSSProperties = {
+  background: "linear-gradient(135deg, #0f172a, #1d4ed8)",
+  borderRadius: "28px",
+  padding: "28px",
+  color: "#ffffff",
+  minHeight: "420px",
+  boxShadow: "0 20px 60px rgba(15,23,42,0.15)",
+};
+
+const previewLabel: CSSProperties = {
+  fontSize: "14px",
+  opacity: 0.9,
+  marginBottom: "12px",
+};
+
+const previewPanel: CSSProperties = {
+  background: "#ffffff",
+  color: "#0f172a",
+  borderRadius: "20px",
+  padding: "20px",
+};
+
+const previewTitle: CSSProperties = {
+  fontWeight: 800,
+  fontSize: "22px",
+  marginBottom: "16px",
+};
+
+const previewGrid: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+  gap: "12px",
+};
+
+const previewCardBase: CSSProperties = {
+  borderRadius: "16px",
+  padding: "16px",
+  fontWeight: 700,
+};
+
+const previewCardDark: CSSProperties = {
+  ...previewCardBase,
+  background: "#0f172a",
+  color: "#ffffff",
+};
+
+const previewCard: CSSProperties = {
+  ...previewCardBase,
+  background: "#ffffff",
+  color: "#111827",
+  border: "1px solid #cbd5e1",
+};
+
+const previewCardSoft: CSSProperties = {
+  ...previewCardBase,
+  background: "#e2e8f0",
+  color: "#111827",
+};
+
+const previewCardGreen: CSSProperties = {
+  ...previewCardBase,
+  background: "#dcfce7",
+  color: "#14532d",
+};
+
+const previewCardBlue: CSSProperties = {
+  ...previewCardBase,
+  background: "#dbeafe",
+  color: "#1d4ed8",
+};
+
+const previewNote: CSSProperties = {
+  marginTop: "18px",
+  padding: "16px",
+  borderRadius: "16px",
+  background: "#f8fafc",
+  border: "1px solid #e2e8f0",
+  color: "#475569",
+  lineHeight: 1.6,
+};
+
+const valueStrip: CSSProperties = {
   maxWidth: "1200px",
   margin: "0 auto",
   padding: "0 24px 24px",
@@ -475,62 +545,79 @@ const valueStrip: React.CSSProperties = {
   gap: "18px",
 };
 
-const valueCard: React.CSSProperties = {
+const valueCard: CSSProperties = {
   background: "#ffffff",
   border: "1px solid #e2e8f0",
   borderRadius: "20px",
   padding: "22px",
 };
 
-const valueTitle: React.CSSProperties = {
+const valueTitle: CSSProperties = {
   margin: "0 0 8px 0",
   fontSize: "20px",
 };
 
-const valueText: React.CSSProperties = {
+const valueText: CSSProperties = {
   margin: 0,
   color: "#475569",
   lineHeight: 1.7,
 };
 
-const sectionWrap: React.CSSProperties = {
+const sectionWrap: CSSProperties = {
   maxWidth: "1200px",
   margin: "0 auto",
   padding: "56px 24px",
 };
 
-const sectionWrapAlt: React.CSSProperties = {
+const sectionWrapAlt: CSSProperties = {
   maxWidth: "1200px",
   margin: "0 auto",
   padding: "56px 24px",
 };
 
-const grid3: React.CSSProperties = {
+const sectionHeaderWrap: CSSProperties = {
+  marginBottom: "28px",
+};
+
+const sectionTitle: CSSProperties = {
+  margin: "0 0 10px 0",
+  fontSize: "38px",
+  color: "#0f172a",
+};
+
+const sectionText: CSSProperties = {
+  margin: 0,
+  color: "#475569",
+  fontSize: "18px",
+  lineHeight: 1.7,
+};
+
+const grid3: CSSProperties = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
   gap: "18px",
 };
 
-const grid4: React.CSSProperties = {
+const grid4: CSSProperties = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
   gap: "18px",
 };
 
-const grid5: React.CSSProperties = {
+const grid5: CSSProperties = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
   gap: "18px",
 };
 
-const infoCard: React.CSSProperties = {
+const infoCard: CSSProperties = {
   background: "#ffffff",
   border: "1px solid #e2e8f0",
   borderRadius: "20px",
   padding: "24px",
 };
 
-const priceCard: React.CSSProperties = {
+const priceCard: CSSProperties = {
   background: "#ffffff",
   border: "1px solid #e2e8f0",
   borderRadius: "20px",
@@ -540,32 +627,32 @@ const priceCard: React.CSSProperties = {
   justifyContent: "space-between",
 };
 
-const cardTitle: React.CSSProperties = {
+const cardTitle: CSSProperties = {
   margin: "0 0 10px 0",
   fontSize: "22px",
   color: "#0f172a",
 };
 
-const cardText: React.CSSProperties = {
+const cardText: CSSProperties = {
   margin: 0,
   color: "#475569",
   lineHeight: 1.7,
 };
 
-const workflowGrid: React.CSSProperties = {
+const workflowGrid: CSSProperties = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
   gap: "16px",
 };
 
-const workflowCard: React.CSSProperties = {
+const workflowCard: CSSProperties = {
   background: "#ffffff",
   border: "1px solid #e2e8f0",
   borderRadius: "18px",
   padding: "20px",
 };
 
-const stepNumber: React.CSSProperties = {
+const stepNumber: CSSProperties = {
   width: "34px",
   height: "34px",
   borderRadius: "999px",
@@ -578,52 +665,53 @@ const stepNumber: React.CSSProperties = {
   marginBottom: "12px",
 };
 
-const ctaPanel: React.CSSProperties = {
+const workflowText: CSSProperties = {
+  fontWeight: 700,
+};
+
+const ctaPanel: CSSProperties = {
   background: "#ffffff",
   border: "1px solid #e2e8f0",
   borderRadius: "24px",
   padding: "28px",
 };
 
-const previewGrid: React.CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-  gap: "12px",
+const ctaTitle: CSSProperties = {
+  margin: "0 0 12px 0",
+  fontSize: "34px",
 };
 
-const previewCardBase: React.CSSProperties = {
-  borderRadius: "16px",
-  padding: "16px",
-  fontWeight: 700,
+const ctaText: CSSProperties = {
+  margin: 0,
+  color: "#475569",
+  lineHeight: 1.7,
+  maxWidth: "760px",
 };
 
-const previewCardDark = {
-  ...previewCardBase,
-  background: "#0f172a",
-  color: "#ffffff",
-};
-
-const previewCard: React.CSSProperties = {
-  ...previewCardBase,
+const footer: CSSProperties = {
+  borderTop: "1px solid #e2e8f0",
   background: "#ffffff",
-  color: "#111827",
-  border: "1px solid #cbd5e1",
+  marginTop: "32px",
 };
 
-const previewCardSoft = {
-  ...previewCardBase,
-  background: "#e2e8f0",
-  color: "#111827",
+const footerInner: CSSProperties = {
+  maxWidth: "1200px",
+  margin: "0 auto",
+  padding: "24px",
+  display: "flex",
+  justifyContent: "space-between",
+  gap: "16px",
+  flexWrap: "wrap",
+  color: "#64748b",
 };
 
-const previewCardGreen = {
-  ...previewCardBase,
-  background: "#dcfce7",
-  color: "#14532d",
+const footerLinks: CSSProperties = {
+  display: "flex",
+  gap: "18px",
+  flexWrap: "wrap",
 };
 
-const previewCardBlue = {
-  ...previewCardBase,
-  background: "#dbeafe",
-  color: "#1d4ed8",
+const footerLink: CSSProperties = {
+  textDecoration: "none",
+  color: "#64748b",
 };
